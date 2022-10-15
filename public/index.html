@@ -5,12 +5,16 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <p></p>
+    <p id="count"></p>
     <canvas id="background"></canvas>
+    <div class="splash">
+      <p><button>I'm here</button></p>
+    </div>
 
-    <audio id="audio" src="/door.wav"></audio>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/howler.min.js"></script>
     <script src="/background.js"></script>
+    <script src="/num-to-words.js"></script>
     <script src="/script.js"></script>
   </body>
 </html>

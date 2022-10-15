@@ -6,11 +6,16 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
+let count = 0;
+
 io.on('connection', (socket) => {
-  io.emit('count', io.engine.clientsCount);
+  count++;
+  io.emit('count', count);
   socket.on('disconnect', (reason) => {
-    io.emit('count', io.engine.clientsCount);
+    count--;
+    io.emit('count', count);
   });
+  console.log(count);
 });
 
 http.listen(port, () => {

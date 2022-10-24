@@ -15,7 +15,6 @@ io.on('connection', (socket) => {
     count--;
     io.emit('count', count);
   });
-  console.log(count);
 });
 
 http.listen(port, () => {
